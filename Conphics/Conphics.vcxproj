@@ -131,13 +131,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canvas\Canvas.h" />
+    <ClInclude Include="Canvas\Freestyle\FreestyleCanvas.h" />
+    <ClInclude Include="Includes\Dimensions.h" />
     <ClInclude Include="Includes\Point.h" />
     <ClInclude Include="Includes\Resolution.h" />
+    <ClInclude Include="Includes\Shape.h" />
     <ClInclude Include="Screen\Console\Console.h" />
     <ClInclude Include="Screen\Screen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Canvas\Canvas.cpp" />
+    <ClCompile Include="Canvas\Freestyle\FreestyleCanvas.cpp" />
     <ClCompile Include="Screen\Console\Console.cpp" />
     <ClCompile Include="Screen\Screen.cpp" />
   </ItemGroup>

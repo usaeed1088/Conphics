@@ -1,7 +1,9 @@
 #pragma once
 
-#include "../Includes/Resolution.h"
+#include "../Includes/Dimensions.h"
 #include "../Includes/Point.h"
+#include "../Includes/Shape.h"
+
 #include "../Screen/Screen.h"
 
 namespace Conphics
@@ -18,18 +20,36 @@ namespace Conphics
 		};
 
 	private:
+		struct Boundary
+		{
+			Boundary(int minHeight, int maxHeight, int minWidth, int maxWidth):
+				MinHeight(minHeight), MaxHeight(maxHeight), MinWidth(minWidth), MaxWidth(maxWidth)
+			{}
+			int MinHeight;
+			int MaxHeight;
+			int MinWidth;
+			int MaxWidth;
+		};
+
+	private:
 		Type m_Type;
-		Resolution m_Resolution;
+		Dimensions m_Dimensions;
 		Point m_Placement;
+		Boundary m_Boundary;
 
 	private:
 		Screen& m_Screen;
 
 	protected:
-		Canvas(Type type, Resolution resolution, Point placement, Screen& screen);
+		Canvas(Type type, Dimensions dimensions, Point placement, Screen& screen);
 		virtual ~Canvas();
 
 	public:
-		void Draw();
+		virtual void Draw(const Shape& shape) = 0;
+
+	protected:
+		Point Placement();
+		void UpdatePixel(Point pixel, bool value);
+		void UpdateScreen();
 	};
 }

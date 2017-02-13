@@ -9,6 +9,9 @@ namespace Conphics
 {
 	class Screen
 	{
+	private:
+		friend class Canvas;
+
 	protected:
 		typedef std::vector<std::vector<bool>> Pixels;
 
@@ -21,13 +24,10 @@ namespace Conphics
 		virtual ~Screen();
 
 	private:
-		friend class Canvas;
-	public: // For testing only
 		void UpdatePixel(Point point, bool value);
 
 	protected:
 		const Pixels& GetPixels() const;
-	public: // For testing only
 		virtual void Update() = 0;
 	};
 }

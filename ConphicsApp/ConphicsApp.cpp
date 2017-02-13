@@ -1,32 +1,20 @@
-#include <Canvas\Canvas.h>
 #include <Screen/Console/Console.h>
-
-void Draw(int number, int Rows, int Cols, Conphics::Screen& screen)
-{
-	int index = 0;
-	for (int i = 0; i < Rows; i++)
-	{
-		for (int j = 0; j < Cols; j++)
-		{
-			if (index++ % number == 0) { screen.UpdatePixel(Conphics::Point(i, j), false); }
-			else { screen.UpdatePixel(Conphics::Point(i, j), true); }
-		}
-	}
-
-	screen.Update();
-}
+#include <Canvas/Freestyle/FreestyleCanvas.h>
 
 int main(int argc, char* argv[])
 {
-	const int Rows = 60;
-	const int Cols = 200;
-	Conphics::Console console(Conphics::Resolution(Rows, Cols));
-	Conphics::Screen& screen = console;
+	Conphics::Resolution ScreenResolution(60, 200);
+	Conphics::Console console(ScreenResolution);
 
-	for (int i = 1; i <= 500; i++)
-	{
-		Draw(i, Rows, Cols, console);
-	}
+	Conphics::Dimensions CanvasDimension(10, 10);
+	Conphics::Point CanvasPlacement(0, 0);
+	Conphics::FreestyleCanvas freestyleCanvas(CanvasDimension, CanvasPlacement, console);
+
+	Conphics::Shape shape(1, std::vector<bool>(10, true));
+	Conphics::Shape shape2(10, std::vector<bool>(1, true));
+
+	freestyleCanvas.Draw(shape);
+	freestyleCanvas.Draw(shape2);
 
 	return 0;
 }

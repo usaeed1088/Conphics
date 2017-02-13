@@ -22,6 +22,15 @@
     <Filter Include="Screen\Console">
       <UniqueIdentifier>{d990cc01-a425-41d4-aa8a-b7991ea8b5ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Canvas\Grid">
+      <UniqueIdentifier>{bedf2583-01da-4456-a56f-a738c818928f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Canvas\Freestyle">
+      <UniqueIdentifier>{b5ff5108-d79e-4b55-a4ba-1af55e9b5ed5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Canvas\Text">
+      <UniqueIdentifier>{2d729a81-1011-4b5f-954a-820f98fe8d0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,6 +51,15 @@
     <ClInclude Include="Screen\Console\Console.h">
       <Filter>Screen\Console</Filter>
     </ClInclude>
+    <ClInclude Include="Canvas\Freestyle\FreestyleCanvas.h">
+      <Filter>Canvas\Freestyle</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Dimensions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Screen\Screen.cpp">
@@ -52,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Screen\Console\Console.cpp">
       <Filter>Screen\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas\Freestyle\FreestyleCanvas.cpp">
+      <Filter>Canvas\Freestyle</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
