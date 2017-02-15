@@ -1,20 +1,34 @@
 #include <Screen/Console/Console.h>
 #include <Canvas/Freestyle/FreestyleCanvas.h>
+#include <Canvas/Grid/GridCanvas.h>
+
+
+using namespace Conphics;
 
 int main(int argc, char* argv[])
 {
-	Conphics::Resolution ScreenResolution(60, 200);
-	Conphics::Console console(ScreenResolution);
+	Resolution ScreenResolution(60, 200);
+	Console console(ScreenResolution);
 
-	Conphics::Dimensions CanvasDimension(10, 10);
-	Conphics::Point CanvasPlacement(0, 0);
-	Conphics::FreestyleCanvas freestyleCanvas(CanvasDimension, CanvasPlacement, console);
+	FreestyleCanvas freestyleCanvas(Dimensions(5, 200), Point(0, 0), console);
+	GridCanvas gridCanvas(Dimensions(20, 200), Resolution(2, 10), Point(30, 0), console);
 
-	Conphics::Shape shape(1, std::vector<bool>(10, true));
-	Conphics::Shape shape2(10, std::vector<bool>(1, true));
+	Shape shape(5, std::vector<bool>(200, true));
 
-	freestyleCanvas.Draw(shape);
-	freestyleCanvas.Draw(shape2);
+	freestyleCanvas.Draw(shape, Point(0, 0));
+	freestyleCanvas.Draw(shape, Point(5, 5));
+
+	gridCanvas.Draw(shape, Point(0, 0));
+	gridCanvas.Draw(shape, Point(0, 2));
+	gridCanvas.Draw(shape, Point(0, 4));
+	gridCanvas.Draw(shape, Point(0, 6));
+	gridCanvas.Draw(shape, Point(0, 8));
+
+	gridCanvas.Draw(shape, Point(1, 1));
+	gridCanvas.Draw(shape, Point(1, 3));
+	gridCanvas.Draw(shape, Point(1, 5));
+	gridCanvas.Draw(shape, Point(1, 7));
+	gridCanvas.Draw(shape, Point(1, 9));
 
 	return 0;
 }

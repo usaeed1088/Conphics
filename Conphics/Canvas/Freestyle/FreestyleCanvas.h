@@ -10,6 +10,6 @@ namespace Conphics
 		FreestyleCanvas(Dimensions dimensions, Point placement, Screen& screen);
 		~FreestyleCanvas() override;
 
-		void Draw(const Shape& shape) override;
+		void Draw(const Shape& shape, Point offset) override;
 	};
 }

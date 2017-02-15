@@ -22,10 +22,10 @@ namespace Conphics
 
 	void Canvas::UpdatePixel(Point pixel, bool value)
 	{
-		if (pixel.Col > m_Boundary.MaxWidth) { return; }
+		if (pixel.Col >= m_Boundary.MaxWidth) { return; }
 		if (pixel.Col < m_Boundary.MinWidth) { return; }
 
-		if (pixel.Row > m_Boundary.MaxHeight) { return; }
+		if (pixel.Row >= m_Boundary.MaxHeight) { return; }
 		if (pixel.Row < m_Boundary.MinHeight) { return; }
 
 		m_Screen.UpdatePixel(pixel, value);

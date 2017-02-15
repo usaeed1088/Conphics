@@ -60,6 +60,9 @@
     <ClInclude Include="Includes\Shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Canvas\Grid\GridCanvas.h">
+      <Filter>Canvas\Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Screen\Screen.cpp">
@@ -73,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="Canvas\Freestyle\FreestyleCanvas.cpp">
       <Filter>Canvas\Freestyle</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas\Grid\GridCanvas.cpp">
+      <Filter>Canvas\Grid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

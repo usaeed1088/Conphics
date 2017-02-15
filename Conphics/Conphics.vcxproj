@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Canvas\Canvas.h" />
     <ClInclude Include="Canvas\Freestyle\FreestyleCanvas.h" />
+    <ClInclude Include="Canvas\Grid\GridCanvas.h" />
     <ClInclude Include="Includes\Dimensions.h" />
     <ClInclude Include="Includes\Point.h" />
     <ClInclude Include="Includes\Resolution.h" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="Canvas\Canvas.cpp" />
     <ClCompile Include="Canvas\Freestyle\FreestyleCanvas.cpp" />
+    <ClCompile Include="Canvas\Grid\GridCanvas.cpp" />
     <ClCompile Include="Screen\Console\Console.cpp" />
     <ClCompile Include="Screen\Screen.cpp" />
   </ItemGroup>

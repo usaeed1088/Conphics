@@ -19,7 +19,7 @@ namespace Conphics
 			Text,
 		};
 
-	private:
+	protected:
 		struct Boundary
 		{
 			Boundary(int minHeight, int maxHeight, int minWidth, int maxWidth):
@@ -45,7 +45,7 @@ namespace Conphics
 		virtual ~Canvas();
 
 	public:
-		virtual void Draw(const Shape& shape) = 0;
+		virtual void Draw(const Shape& shape, Point offset = Point(0,0)) = 0;
 
 	protected:
 		Point Placement();

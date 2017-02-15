@@ -13,13 +13,13 @@ namespace Conphics
 
 	}
 
-	void FreestyleCanvas::Draw(const Shape& shape)
+	void FreestyleCanvas::Draw(const Shape& shape, Point offset)
 	{
 		for (int row = 0; row < shape.size(); row++)
 		{
 			for (int col = 0; col < shape[row].size(); col++)
 			{
-				UpdatePixel(Point(row + Placement().Row, col + Placement().Col), shape[row][col]);
+				UpdatePixel(Point(row + offset.Row + Placement().Row, col + offset.Col + Placement().Col), shape[row][col]);
 			}
 		}
 
