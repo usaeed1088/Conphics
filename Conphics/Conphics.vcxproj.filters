@@ -31,6 +31,12 @@
     <Filter Include="Canvas\Text">
       <UniqueIdentifier>{2d729a81-1011-4b5f-954a-820f98fe8d0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Factory">
+      <UniqueIdentifier>{6059199f-87eb-413f-aa36-22d7600488fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Factory\Alphabet">
+      <UniqueIdentifier>{f6b86fd7-2d37-456a-b3af-786733b6b264}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -63,6 +69,12 @@
     <ClInclude Include="Canvas\Grid\GridCanvas.h">
       <Filter>Canvas\Grid</Filter>
     </ClInclude>
+    <ClInclude Include="Canvas\Text\TextCanvas.h">
+      <Filter>Canvas\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory\Alphabet\AlphabetFactory.h">
+      <Filter>Factory\Alphabet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Screen\Screen.cpp">
@@ -79,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="Canvas\Grid\GridCanvas.cpp">
       <Filter>Canvas\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas\Text\TextCanvas.cpp">
+      <Filter>Canvas\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory\Alphabet\AlphabetFactory.cpp">
+      <Filter>Factory\Alphabet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
