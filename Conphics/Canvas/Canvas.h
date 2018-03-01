@@ -2,7 +2,8 @@
 
 #include "../Includes/Dimensions.h"
 #include "../Includes/Point.h"
-#include "../Includes/Shape.h"
+
+#include "../Shape/Shape.h"
 
 #include "../Screen/Screen.h"
 
@@ -49,7 +50,6 @@ namespace Conphics
 
 	protected:
 		Point Placement();
-		void UpdatePixel(Point pixel, bool value);
-		void UpdateScreen();
+		void UpdatePixel(Point pixel, std::uint8_t value);
 	};
 }

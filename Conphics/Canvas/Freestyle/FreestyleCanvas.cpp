@@ -15,14 +15,14 @@ namespace Conphics
 
 	void FreestyleCanvas::Draw(const Shape& shape, Point offset)
 	{
-		for (int row = 0; row < shape.size(); row++)
+		Shape::Pixels pixels = shape.GetPixels();
+
+		for (int row = 0; row < pixels.size(); row++)
 		{
-			for (int col = 0; col < shape[row].size(); col++)
+			for (int col = 0; col < pixels[row].size(); col++)
 			{
-				UpdatePixel(Point(row + offset.Row + Placement().Row, col + offset.Col + Placement().Col), shape[row][col]);
+				UpdatePixel(Point(row + offset.Row + Placement().Row, col + offset.Col + Placement().Col), pixels[row][col]);
 			}
 		}
-
-		UpdateScreen();
 	}
 }

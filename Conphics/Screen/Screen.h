@@ -4,6 +4,7 @@
 #include "../Includes/Point.h"
 
 #include <vector>
+#include <cstdint>
 
 namespace Conphics
 {
@@ -13,7 +14,17 @@ namespace Conphics
 		friend class Canvas;
 
 	protected:
-		typedef std::vector<std::vector<bool>> Pixels;
+		struct Pixel
+		{
+			Pixel(std::uint8_t value, bool updated) :
+				Value(value), Updated(updated)
+			{
+			}
+
+			std::uint8_t Value;
+			bool Updated;
+		};
+		typedef std::vector<std::vector<Pixel>> Pixels;
 
 	private:
 		Resolution m_Resolution;
@@ -24,10 +35,12 @@ namespace Conphics
 		virtual ~Screen();
 
 	private:
-		void UpdatePixel(Point point, bool value);
+		void UpdatePixel(Point point, std::uint8_t value);
 
 	protected:
-		const Pixels& GetPixels() const;
+		Pixels& GetPixels();
+
+	public:
 		virtual void Update() = 0;
 	};
 }

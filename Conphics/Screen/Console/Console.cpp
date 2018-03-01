@@ -1,16 +1,25 @@
 #include "Console.h"
 
 #include <iostream>
+#include <Windows.h>
 
 namespace Conphics
 {
-	const char Console::FillCharacter('X');
-	const char Console::EmptyCharacter(' ');
-
 	Console::Console(Resolution resolution):
 		Screen(resolution)
 	{
-
+		BrightnessLevels.push_back(' ');
+		BrightnessLevels.push_back('-');
+		BrightnessLevels.push_back(':');
+		BrightnessLevels.push_back('|');
+		BrightnessLevels.push_back('=');
+		BrightnessLevels.push_back('o');
+		BrightnessLevels.push_back('O');
+		BrightnessLevels.push_back('X');
+		BrightnessLevels.push_back('&');
+		BrightnessLevels.push_back('%');
+		BrightnessLevels.push_back('$');
+		BrightnessLevels.push_back('#');
 	}
 
 	Console::~Console()
@@ -21,18 +30,40 @@ namespace Conphics
 
 	void Console::Update()
 	{
-		const Pixels& pixels = GetPixels();
+		Pixels& pixels = GetPixels();
 
-		for (std::vector<bool> row : pixels)
+		for (int row = 0; row < pixels.size(); row++)
 		{
-			for (bool value : row)
+			for (int col = 0; col < pixels[row].size(); col++)
 			{
-				char c = FillCharacter;
-				if (!value) { c = EmptyCharacter; }
-				std::cout << c;
+				if (!pixels[row][col].Updated)
+				{
+					continue;
+				}
+
+				MoveCursor(row, col);
+				std::cout << BrightnessLevels[pixels[row][col].Value];
+				pixels[row][col].Updated = false;
 			}
 
-			std::cout << std::endl;
+			//std::cout << std::endl;
 		}
+	}
+
+	void Console::MoveCursor(int row, int col)
+	{
+		// Untested, but simple enough it should at least be close to reality...
+		COORD pos = { col, row };
+		HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleCursorPosition(output, pos);
+	}
+
+	void Console::SetConsoleSize(int height, int width)
+	{
+		HWND console = GetConsoleWindow();
+		RECT r;
+		GetWindowRect(console, &r); //stores the console's current dimensions
+
+		MoveWindow(console, r.left, r.top, width, height, TRUE); // 800 width, 100 height
 	}
 }

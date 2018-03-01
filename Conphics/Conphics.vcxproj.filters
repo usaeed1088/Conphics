@@ -37,6 +37,12 @@
     <Filter Include="Factory\Alphabet">
       <UniqueIdentifier>{f6b86fd7-2d37-456a-b3af-786733b6b264}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape">
+      <UniqueIdentifier>{d5e09378-7ed3-4646-8fb6-ece96e13545c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\SmartShape">
+      <UniqueIdentifier>{453c9769-2b8b-419d-96cf-f0d667f4d821}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -63,9 +69,6 @@
     <ClInclude Include="Includes\Dimensions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Shape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Canvas\Grid\GridCanvas.h">
       <Filter>Canvas\Grid</Filter>
     </ClInclude>
@@ -74,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="Factory\Alphabet\AlphabetFactory.h">
       <Filter>Factory\Alphabet</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape\Shape.h">
+      <Filter>Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape\SmartShape\SmartShape.h">
+      <Filter>Shape\SmartShape</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +106,12 @@
     </ClCompile>
     <ClCompile Include="Factory\Alphabet\AlphabetFactory.cpp">
       <Filter>Factory\Alphabet</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape\Shape.cpp">
+      <Filter>Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape\SmartShape\SmartShape.cpp">
+      <Filter>Shape\SmartShape</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

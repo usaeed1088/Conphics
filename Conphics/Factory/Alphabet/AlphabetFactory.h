@@ -1,15 +1,11 @@
 #pragma once
 
-#include "../../Includes/Shape.h"
+#include "../../Shape/Shape.h"
 
 namespace Conphics
 {
 	class AlphabetFactory
 	{
-	private:
-		static const int CHARACTER_WIDTH;
-		static const int CHARACTER_HEIGHT;
-
 	private:
 		AlphabetFactory();
 

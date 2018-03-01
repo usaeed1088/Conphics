@@ -19,18 +19,18 @@ namespace Conphics
 	{
 		Boundary boundary = DetermineUnitBoundary(offset);
 
-		for (int row = 0; row < shape.size(); row++)
+		Shape::Pixels pixels = shape.GetPixels();
+
+		for (int row = 0; row < pixels.size(); row++)
 		{
-			for (int col = 0; col < shape[row].size(); col++)
+			for (int col = 0; col < pixels[row].size(); col++)
 			{
 				Point p(boundary.MinHeight + row, boundary.MinWidth + col);
 				if (p.Row >= boundary.MaxHeight) { continue; }
 				if (p.Col >= boundary.MaxWidth) { continue; }
-				UpdatePixel(p, shape[row][col]);
+				UpdatePixel(p, pixels[row][col]);
 			}
 		}
-
-		UpdateScreen();
 	}
 
 	Canvas::Boundary GridCanvas::DetermineUnitBoundary(Point offset)

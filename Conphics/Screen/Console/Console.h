@@ -7,14 +7,17 @@ namespace Conphics
 	class Console : public Screen
 	{
 	private:
-		static const char FillCharacter;
-		static const char EmptyCharacter;
+		std::vector<std::uint8_t> BrightnessLevels;
 
 	public:
 		Console(Resolution resolution);
 		~Console() override;
 
-	private:
+	public:
 		void Update() override;
+
+	private:
+		void MoveCursor(int row, int col);
+		void SetConsoleSize(int height, int width);
 	};
 }

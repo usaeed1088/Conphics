@@ -20,7 +20,7 @@ namespace Conphics
 		return m_Placement;
 	}
 
-	void Canvas::UpdatePixel(Point pixel, bool value)
+	void Canvas::UpdatePixel(Point pixel, std::uint8_t value)
 	{
 		if (pixel.Col >= m_Boundary.MaxWidth) { return; }
 		if (pixel.Col < m_Boundary.MinWidth) { return; }
@@ -29,10 +29,5 @@ namespace Conphics
 		if (pixel.Row < m_Boundary.MinHeight) { return; }
 
 		m_Screen.UpdatePixel(pixel, value);
-	}
-
-	void Canvas::UpdateScreen()
-	{
-		m_Screen.Update();
 	}
 }
